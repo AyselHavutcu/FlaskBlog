@@ -1,0 +1,35 @@
+{%   extends "layout.html"%}
+
+{% block body %}
+
+{% if user %}
+    <span   font-color="blue">Username :</span>{{user.username}}
+    <hr/>
+   <hr3>Age :</hr3> {{ user.age}}
+    <hr/>
+    <hr3>University :</hr3>{{ user.university}}
+     <hr>
+   <hr3> Department:</hr3>{{user.department}}
+    <hr/>
+    <hr3>Study Field :</hr3>{{user.studyField}}
+    
+    <hr/>
+    <a href="/updateprofile" class ="btn btn-danger">Edit Profile</a>
+{%  else %}
+
+<div class ="alert alert-warning">This person is not avaliable...</div>   
+{% endif %}
+<h3>About me</h3>
+<hr/>
+<hr>
+Çukurova Üniversitesi Bilgisayar Mühendisligi 3. sınıf ögrencisiyim. 3. sınıfın güz döneminde Polonyada Politechnika Bialostocka üniversitesinde
+erasmus yaptım.Okul genel ortalamam 3.4 /4.Okulda C ve C++ dillerini ögrendim.Objeye yönelik aldıgım dersler vesilesiyle az da olsa Java bilgim
+var.İlk stajımı Çukurova üniversitesi teknokentte yer alan Novartz Bilisimde yaptım.Web alanında calıstım.3 kisilik bir ekip calısmasıyla bir web
+projesi yaptık.Bir Online Advice web sitesi hazırladık.Bu proje vesilesiyle HTML5 ,CSS3 ,Java script(Angular Js),Boostrap ,SQL ve C#(+Entity
+Framework ) yeteneklerimi gelistirdim.Yurt dısı deneyimim boyunca meslegimle ilgili cok farklı alanlar ve bakıs acıları kazandım.Yurtdışında
+kullanılan teknolojiler hakkında daha fazla bilgi edindim ve kendimi küresel teknolojilerde gelistirmeye karar verdim.Bu teknolojiler icinde Artırılmıs
+Gerceklik ,Yapay Zeka ,Makine Ögrenmesi ve Agile vs. alanlarında gelistirmeyi düsünüp bunun üzerinde calısmaktayım.Verilen her görevi yüksek
+irade ve is disiplini ile yapabilecek kapasiteye sahibim.Okul hayatım boyunca arastırma yeteneklerimide yeterince gelistirdigimi düsünüyorum.
+<hr/>
+
+{% endblock %}

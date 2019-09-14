@@ -1,0 +1,45 @@
+{% extends  "layout.html" %}
+
+{% block body %}
+
+
+
+{% if article %}
+   <h4>{{ article.title}}</h4>
+    <hr/>
+    Author :{{ article.author}}
+    <hr/>
+    Date :{{ article.created_date}}
+    <hr>
+    {{ article.content | safe }}<!--ck editor html seklinde kaydediyor database e o yuzden bu safe islemini kullanıyoruz-->
+<span><b><i>Write your comments about article down below</i></b></span>
+    <form action = "/comment/{{ article.id}}" method ="post">
+      
+     <input class ="text"  name ="title" placeholder="Title"><br><br>
+     <textarea rows="2" cols="50" name="comment"   placeholder="Enter comment  here..."></textarea><br>
+    <button class="btn btn-primary" type="submit">Submit</button>
+   
+      </form>
+   {% if comments %}
+   <ul class="list-group">
+    {% for comment in comments %}
+      <li class ="list-group-item"><a href ="#">{{ comment.title}}</a></li>
+    {% endfor %}
+    </ul>
+
+   {% else %}
+
+   <div class ="alert alert-danger">There isnt't any comments yet.Be the first one :)</div>
+
+   {% endif %}
+    
+   
+
+{%  else %}
+
+<div class ="alert alert-warning">This article is not avaliable...</div>   
+{% endif %}
+
+
+
+{% endblock body %}
